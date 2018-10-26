@@ -1,0 +1,43 @@
+# AlmaClient::User
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**record_type** | [**RecordType**](RecordType.md) |  | [optional] 
+**primary_id** | **String** |  | [optional] 
+**first_name** | **String** |  | [optional] 
+**middle_name** | **String** |  | [optional] 
+**last_name** | **String** |  | [optional] 
+**full_name** | **String** |  | [optional] 
+**pin_number** | **String** |  | [optional] 
+**user_title** | [**UserTitle**](UserTitle.md) |  | [optional] 
+**job_category** | [**JobCategory**](JobCategory.md) |  | [optional] 
+**job_description** | **String** |  | [optional] 
+**gender** | [**Gender**](Gender.md) |  | [optional] 
+**user_group** | [**UserGroup**](UserGroup.md) |  | [optional] 
+**campus_code** | [**CampusCode**](CampusCode.md) |  | [optional] 
+**web_site_url** | **String** |  | [optional] 
+**cataloger_level** | [**CatalogerLevel**](CatalogerLevel.md) |  | [optional] 
+**preferred_language** | [**PreferredLanguage**](PreferredLanguage.md) |  | [optional] 
+**account_type** | [**AccountType**](AccountType.md) |  | [optional] 
+**external_id** | **String** |  | [optional] 
+**password** | **String** |  | [optional] 
+**force_password_change** | **String** |  | [optional] 
+**status** | [**Status**](Status.md) |  | [optional] 
+**status_date** | **String** |  | [optional] 
+**requests** | **String** |  | [optional] 
+**loans** | **String** |  | [optional] 
+**fees** | **String** |  | [optional] 
+**contact_info** | **String** |  | [optional] 
+**pref_first_name** | **String** |  | [optional] 
+**pref_middle_name** | **String** |  | [optional] 
+**pref_last_name** | **String** |  | [optional] 
+**researcher** | **String** |  | [optional] 
+**link** | **String** |  | [optional] 
+**user_identifier** | **String** |  | [optional] 
+**user_role** | **String** |  | [optional] 
+**user_statistic** | **String** |  | [optional] 
+**proxy_for_user** | **String** |  | [optional] 
+**rs_library** | **String** |  | [optional] 
+
+

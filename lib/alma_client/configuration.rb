@@ -130,8 +130,8 @@ module AlmaClient
     attr_accessor :follow_location
 
     def initialize
-      @scheme = 'https'
-      @host = ''
+      @scheme = 'http'
+      @host = 'api-na.hosted.exlibrisgroup.com'
       @base_path = '/almaws/v1'
       @api_key = {}
       @api_key_prefix = {}

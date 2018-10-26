@@ -79,7 +79,7 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost/almaws/v1*
+All URIs are relative to *http://api-na.hosted.exlibrisgroup.com/almaws/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

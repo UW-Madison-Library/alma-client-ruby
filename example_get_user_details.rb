@@ -5,7 +5,6 @@ Dotenv.load
 
 AlmaClient.configure do |config|
   config.scheme = 'https'
-  config.host = 'api-na.hosted.exlibrisgroup.com'
   config.api_key['Authorization'] = ENV['ALMA_API_KEY']
   config.api_key_prefix['Authorization'] = 'apikey'
   config.debugging = true

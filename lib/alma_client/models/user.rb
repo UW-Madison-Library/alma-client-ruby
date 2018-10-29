@@ -151,7 +151,7 @@ module AlmaClient
         :'external_id' => :'String',
         :'password' => :'String',
         :'force_password_change' => :'String',
-        :'status' => :'Status',
+        :'status' => :'Code',
         :'status_date' => :'String',
         :'requests' => :'String',
         :'loans' => :'String',
@@ -163,7 +163,7 @@ module AlmaClient
         :'researcher' => :'String',
         :'link' => :'String',
         :'user_identifier' => :'String',
-        :'user_role' => :'String',
+        :'user_role' => :'Array<UserRole>',
         :'user_statistic' => :'String',
         :'proxy_for_user' => :'String',
         :'rs_library' => :'String'
@@ -307,7 +307,9 @@ module AlmaClient
       end
 
       if attributes.has_key?(:'user_role')
-        self.user_role = attributes[:'user_role']
+        if (value = attributes[:'user_role']).is_a?(Array)
+          self.user_role = value
+        end
       end
 
       if attributes.has_key?(:'user_statistic')

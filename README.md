@@ -79,7 +79,7 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://api-na.hosted.exlibrisgroup.com/almaws/v1*
+All URIs are relative to *https://api-na.hosted.exlibrisgroup.com/almaws/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -92,14 +92,16 @@ Class | Method | HTTP request | Description
  - [AlmaClient::AlmaError](docs/AlmaError.md)
  - [AlmaClient::CampusCode](docs/CampusCode.md)
  - [AlmaClient::CatalogerLevel](docs/CatalogerLevel.md)
+ - [AlmaClient::Code](docs/Code.md)
  - [AlmaClient::Gender](docs/Gender.md)
  - [AlmaClient::JobCategory](docs/JobCategory.md)
  - [AlmaClient::NotFound](docs/NotFound.md)
+ - [AlmaClient::Parameter](docs/Parameter.md)
  - [AlmaClient::PreferredLanguage](docs/PreferredLanguage.md)
  - [AlmaClient::RecordType](docs/RecordType.md)
- - [AlmaClient::Status](docs/Status.md)
  - [AlmaClient::User](docs/User.md)
  - [AlmaClient::UserGroup](docs/UserGroup.md)
+ - [AlmaClient::UserRole](docs/UserRole.md)
  - [AlmaClient::UserTitle](docs/UserTitle.md)
 
 

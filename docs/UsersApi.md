@@ -1,6 +1,6 @@
 # AlmaClient::UsersApi
 
-All URIs are relative to *http://api-na.hosted.exlibrisgroup.com/almaws/v1*
+All URIs are relative to *https://api-na.hosted.exlibrisgroup.com/almaws/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

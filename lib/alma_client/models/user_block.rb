@@ -13,24 +13,48 @@ Swagger Codegen version: 2.4.0-SNAPSHOT
 require 'date'
 
 module AlmaClient
-  class Parameter
-    attr_accessor :type
+  class UserBlock
+    attr_accessor :block_type
 
-    attr_accessor :value
+    attr_accessor :block_description
+
+    attr_accessor :block_status
+
+    attr_accessor :block_note
+
+    attr_accessor :created_by
+
+    attr_accessor :created_date
+
+    attr_accessor :expiry_date
+
+    attr_accessor :item_loan_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'value' => :'value'
+        :'block_type' => :'block_type',
+        :'block_description' => :'block_description',
+        :'block_status' => :'block_status',
+        :'block_note' => :'block_note',
+        :'created_by' => :'created_by',
+        :'created_date' => :'created_date',
+        :'expiry_date' => :'expiry_date',
+        :'item_loan_id' => :'item_loan_id'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'type' => :'ParameterTypeCode',
-        :'value' => :'ParameterValueCode'
+        :'block_type' => :'UserBlockCode',
+        :'block_description' => :'String',
+        :'block_status' => :'String',
+        :'block_note' => :'String',
+        :'created_by' => :'String',
+        :'created_date' => :'String',
+        :'expiry_date' => :'String',
+        :'item_loan_id' => :'String'
       }
     end
 
@@ -42,12 +66,36 @@ module AlmaClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'block_type')
+        self.block_type = attributes[:'block_type']
       end
 
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
+      if attributes.has_key?(:'block_description')
+        self.block_description = attributes[:'block_description']
+      end
+
+      if attributes.has_key?(:'block_status')
+        self.block_status = attributes[:'block_status']
+      end
+
+      if attributes.has_key?(:'block_note')
+        self.block_note = attributes[:'block_note']
+      end
+
+      if attributes.has_key?(:'created_by')
+        self.created_by = attributes[:'created_by']
+      end
+
+      if attributes.has_key?(:'created_date')
+        self.created_date = attributes[:'created_date']
+      end
+
+      if attributes.has_key?(:'expiry_date')
+        self.expiry_date = attributes[:'expiry_date']
+      end
+
+      if attributes.has_key?(:'item_loan_id')
+        self.item_loan_id = attributes[:'item_loan_id']
       end
     end
 
@@ -69,8 +117,14 @@ module AlmaClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          value == o.value
+          block_type == o.block_type &&
+          block_description == o.block_description &&
+          block_status == o.block_status &&
+          block_note == o.block_note &&
+          created_by == o.created_by &&
+          created_date == o.created_date &&
+          expiry_date == o.expiry_date &&
+          item_loan_id == o.item_loan_id
     end
 
     # @see the `==` method
@@ -82,7 +136,7 @@ module AlmaClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, value].hash
+      [block_type, block_description, block_status, block_note, created_by, created_date, expiry_date, item_loan_id].hash
     end
 
     # Builds the object from hash

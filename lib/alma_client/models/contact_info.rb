@@ -13,24 +13,28 @@ Swagger Codegen version: 2.4.0-SNAPSHOT
 require 'date'
 
 module AlmaClient
-  class Parameter
-    attr_accessor :type
+  class ContactInfo
+    attr_accessor :address
 
-    attr_accessor :value
+    attr_accessor :email
+
+    attr_accessor :phone
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'value' => :'value'
+        :'address' => :'address',
+        :'email' => :'email',
+        :'phone' => :'phone'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'type' => :'ParameterTypeCode',
-        :'value' => :'ParameterValueCode'
+        :'address' => :'Array<Address>',
+        :'email' => :'Array<Email>',
+        :'phone' => :'Array<Phone>'
       }
     end
 
@@ -42,12 +46,22 @@ module AlmaClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'address')
+        if (value = attributes[:'address']).is_a?(Array)
+          self.address = value
+        end
       end
 
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
+      if attributes.has_key?(:'email')
+        if (value = attributes[:'email']).is_a?(Array)
+          self.email = value
+        end
+      end
+
+      if attributes.has_key?(:'phone')
+        if (value = attributes[:'phone']).is_a?(Array)
+          self.phone = value
+        end
       end
     end
 
@@ -69,8 +83,9 @@ module AlmaClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          value == o.value
+          address == o.address &&
+          email == o.email &&
+          phone == o.phone
     end
 
     # @see the `==` method
@@ -82,7 +97,7 @@ module AlmaClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, value].hash
+      [address, email, phone].hash
     end
 
     # Builds the object from hash

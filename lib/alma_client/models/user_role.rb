@@ -35,9 +35,9 @@ module AlmaClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'status' => :'Code',
-        :'scope' => :'Code',
-        :'role_type' => :'Code',
+        :'status' => :'UserRoleStatusCode',
+        :'scope' => :'UserRoleScopeCode',
+        :'role_type' => :'UserRoleRoleTypeCode',
         :'parameter' => :'Array<Parameter>'
       }
     end

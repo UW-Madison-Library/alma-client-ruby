@@ -13,24 +13,24 @@ Swagger Codegen version: 2.4.0-SNAPSHOT
 require 'date'
 
 module AlmaClient
-  class Parameter
-    attr_accessor :type
-
+  class ParameterValueCode
     attr_accessor :value
+
+    attr_accessor :desc
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'value' => :'value'
+        :'value' => :'value',
+        :'desc' => :'desc'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'type' => :'ParameterTypeCode',
-        :'value' => :'ParameterValueCode'
+        :'value' => :'String',
+        :'desc' => :'String'
       }
     end
 
@@ -42,12 +42,12 @@ module AlmaClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
       if attributes.has_key?(:'value')
         self.value = attributes[:'value']
+      end
+
+      if attributes.has_key?(:'desc')
+        self.desc = attributes[:'desc']
       end
     end
 
@@ -69,8 +69,8 @@ module AlmaClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          value == o.value
+          value == o.value &&
+          desc == o.desc
     end
 
     # @see the `==` method
@@ -82,7 +82,7 @@ module AlmaClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, value].hash
+      [value, desc].hash
     end
 
     # Builds the object from hash

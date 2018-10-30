@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**Code**](Code.md) |  | [optional] 
-**value** | [**Code**](Code.md) |  | [optional] 
+**type** | [**ParameterTypeCode**](ParameterTypeCode.md) |  | [optional] 
+**value** | [**ParameterValueCode**](ParameterValueCode.md) |  | [optional] 
 
 

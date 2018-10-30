@@ -80,6 +80,10 @@ module AlmaClient
 
     attr_accessor :user_role
 
+    attr_accessor :user_block
+
+    attr_accessor :user_note
+
     attr_accessor :user_statistic
 
     attr_accessor :proxy_for_user
@@ -122,6 +126,8 @@ module AlmaClient
         :'link' => :'link',
         :'user_identifier' => :'user_identifier',
         :'user_role' => :'user_role',
+        :'user_block' => :'user_block',
+        :'user_note' => :'user_note',
         :'user_statistic' => :'user_statistic',
         :'proxy_for_user' => :'proxy_for_user',
         :'rs_library' => :'rs_library'
@@ -151,22 +157,24 @@ module AlmaClient
         :'external_id' => :'String',
         :'password' => :'String',
         :'force_password_change' => :'String',
-        :'status' => :'Code',
+        :'status' => :'StatusCode',
         :'status_date' => :'String',
         :'requests' => :'String',
         :'loans' => :'String',
         :'fees' => :'String',
-        :'contact_info' => :'String',
+        :'contact_info' => :'ContactInfo',
         :'pref_first_name' => :'String',
         :'pref_middle_name' => :'String',
         :'pref_last_name' => :'String',
         :'researcher' => :'String',
         :'link' => :'String',
-        :'user_identifier' => :'String',
+        :'user_identifier' => :'Array<UserIdentifier>',
         :'user_role' => :'Array<UserRole>',
-        :'user_statistic' => :'String',
+        :'user_block' => :'Array<UserBlock>',
+        :'user_note' => :'Array<UserNote>',
+        :'user_statistic' => :'Array<UserStatistic>',
         :'proxy_for_user' => :'String',
-        :'rs_library' => :'String'
+        :'rs_library' => :'Array<RsLibrary>'
       }
     end
 
@@ -303,7 +311,9 @@ module AlmaClient
       end
 
       if attributes.has_key?(:'user_identifier')
-        self.user_identifier = attributes[:'user_identifier']
+        if (value = attributes[:'user_identifier']).is_a?(Array)
+          self.user_identifier = value
+        end
       end
 
       if attributes.has_key?(:'user_role')
@@ -312,8 +322,22 @@ module AlmaClient
         end
       end
 
+      if attributes.has_key?(:'user_block')
+        if (value = attributes[:'user_block']).is_a?(Array)
+          self.user_block = value
+        end
+      end
+
+      if attributes.has_key?(:'user_note')
+        if (value = attributes[:'user_note']).is_a?(Array)
+          self.user_note = value
+        end
+      end
+
       if attributes.has_key?(:'user_statistic')
-        self.user_statistic = attributes[:'user_statistic']
+        if (value = attributes[:'user_statistic']).is_a?(Array)
+          self.user_statistic = value
+        end
       end
 
       if attributes.has_key?(:'proxy_for_user')
@@ -321,7 +345,9 @@ module AlmaClient
       end
 
       if attributes.has_key?(:'rs_library')
-        self.rs_library = attributes[:'rs_library']
+        if (value = attributes[:'rs_library']).is_a?(Array)
+          self.rs_library = value
+        end
       end
     end
 
@@ -376,6 +402,8 @@ module AlmaClient
           link == o.link &&
           user_identifier == o.user_identifier &&
           user_role == o.user_role &&
+          user_block == o.user_block &&
+          user_note == o.user_note &&
           user_statistic == o.user_statistic &&
           proxy_for_user == o.proxy_for_user &&
           rs_library == o.rs_library
@@ -390,7 +418,7 @@ module AlmaClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [record_type, primary_id, first_name, middle_name, last_name, full_name, pin_number, user_title, job_category, job_description, gender, user_group, campus_code, web_site_url, cataloger_level, preferred_language, account_type, external_id, password, force_password_change, status, status_date, requests, loans, fees, contact_info, pref_first_name, pref_middle_name, pref_last_name, researcher, link, user_identifier, user_role, user_statistic, proxy_for_user, rs_library].hash
+      [record_type, primary_id, first_name, middle_name, last_name, full_name, pin_number, user_title, job_category, job_description, gender, user_group, campus_code, web_site_url, cataloger_level, preferred_language, account_type, external_id, password, force_password_change, status, status_date, requests, loans, fees, contact_info, pref_first_name, pref_middle_name, pref_last_name, researcher, link, user_identifier, user_role, user_block, user_note, user_statistic, proxy_for_user, rs_library].hash
     end
 
     # Builds the object from hash

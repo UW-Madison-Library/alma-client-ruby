@@ -13,24 +13,36 @@ Swagger Codegen version: 2.4.0-SNAPSHOT
 require 'date'
 
 module AlmaClient
-  class Parameter
-    attr_accessor :type
-
+  class UserIdentifier
     attr_accessor :value
+
+    attr_accessor :id_type
+
+    attr_accessor :note
+
+    attr_accessor :status
+
+    attr_accessor :segment_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'value' => :'value'
+        :'value' => :'value',
+        :'id_type' => :'id_type',
+        :'note' => :'note',
+        :'status' => :'status',
+        :'segment_type' => :'segment_type'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'type' => :'ParameterTypeCode',
-        :'value' => :'ParameterValueCode'
+        :'value' => :'String',
+        :'id_type' => :'UserIdentifierIdTypeCode',
+        :'note' => :'String',
+        :'status' => :'String',
+        :'segment_type' => :'String'
       }
     end
 
@@ -42,12 +54,24 @@ module AlmaClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
       if attributes.has_key?(:'value')
         self.value = attributes[:'value']
+      end
+
+      if attributes.has_key?(:'id_type')
+        self.id_type = attributes[:'id_type']
+      end
+
+      if attributes.has_key?(:'note')
+        self.note = attributes[:'note']
+      end
+
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
+      end
+
+      if attributes.has_key?(:'segment_type')
+        self.segment_type = attributes[:'segment_type']
       end
     end
 
@@ -69,8 +93,11 @@ module AlmaClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          value == o.value
+          value == o.value &&
+          id_type == o.id_type &&
+          note == o.note &&
+          status == o.status &&
+          segment_type == o.segment_type
     end
 
     # @see the `==` method
@@ -82,7 +109,7 @@ module AlmaClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, value].hash
+      [value, id_type, note, status, segment_type].hash
     end
 
     # Builds the object from hash

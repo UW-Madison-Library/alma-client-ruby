@@ -13,24 +13,24 @@ Swagger Codegen version: 2.4.0-SNAPSHOT
 require 'date'
 
 module AlmaClient
-  class Parameter
-    attr_accessor :type
+  class UserStatistic
+    attr_accessor :statistic_category
 
-    attr_accessor :value
+    attr_accessor :segment_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'value' => :'value'
+        :'statistic_category' => :'statistic_category',
+        :'segment_type' => :'segment_type'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'type' => :'ParameterTypeCode',
-        :'value' => :'ParameterValueCode'
+        :'statistic_category' => :'UserStatisticCode',
+        :'segment_type' => :'String'
       }
     end
 
@@ -42,12 +42,12 @@ module AlmaClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'statistic_category')
+        self.statistic_category = attributes[:'statistic_category']
       end
 
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
+      if attributes.has_key?(:'segment_type')
+        self.segment_type = attributes[:'segment_type']
       end
     end
 
@@ -69,8 +69,8 @@ module AlmaClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          value == o.value
+          statistic_category == o.statistic_category &&
+          segment_type == o.segment_type
     end
 
     # @see the `==` method
@@ -82,7 +82,7 @@ module AlmaClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, value].hash
+      [statistic_category, segment_type].hash
     end
 
     # Builds the object from hash

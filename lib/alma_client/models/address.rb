@@ -13,24 +13,72 @@ Swagger Codegen version: 2.4.0-SNAPSHOT
 require 'date'
 
 module AlmaClient
-  class Parameter
-    attr_accessor :type
+  class Address
+    attr_accessor :line1
 
-    attr_accessor :value
+    attr_accessor :line2
+
+    attr_accessor :line3
+
+    attr_accessor :line4
+
+    attr_accessor :line5
+
+    attr_accessor :city
+
+    attr_accessor :state_province
+
+    attr_accessor :postal_code
+
+    attr_accessor :country
+
+    attr_accessor :address_note
+
+    attr_accessor :start_date
+
+    attr_accessor :preferred
+
+    attr_accessor :segment_type
+
+    attr_accessor :address_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'value' => :'value'
+        :'line1' => :'line1',
+        :'line2' => :'line2',
+        :'line3' => :'line3',
+        :'line4' => :'line4',
+        :'line5' => :'line5',
+        :'city' => :'city',
+        :'state_province' => :'state_province',
+        :'postal_code' => :'postal_code',
+        :'country' => :'country',
+        :'address_note' => :'address_note',
+        :'start_date' => :'start_date',
+        :'preferred' => :'preferred',
+        :'segment_type' => :'segment_type',
+        :'address_type' => :'address_type'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'type' => :'ParameterTypeCode',
-        :'value' => :'ParameterValueCode'
+        :'line1' => :'String',
+        :'line2' => :'String',
+        :'line3' => :'String',
+        :'line4' => :'String',
+        :'line5' => :'String',
+        :'city' => :'String',
+        :'state_province' => :'String',
+        :'postal_code' => :'String',
+        :'country' => :'CountryCode',
+        :'address_note' => :'String',
+        :'start_date' => :'String',
+        :'preferred' => :'BOOLEAN',
+        :'segment_type' => :'String',
+        :'address_type' => :'Array<AddressTypeCode>'
       }
     end
 
@@ -42,12 +90,62 @@ module AlmaClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'line1')
+        self.line1 = attributes[:'line1']
       end
 
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
+      if attributes.has_key?(:'line2')
+        self.line2 = attributes[:'line2']
+      end
+
+      if attributes.has_key?(:'line3')
+        self.line3 = attributes[:'line3']
+      end
+
+      if attributes.has_key?(:'line4')
+        self.line4 = attributes[:'line4']
+      end
+
+      if attributes.has_key?(:'line5')
+        self.line5 = attributes[:'line5']
+      end
+
+      if attributes.has_key?(:'city')
+        self.city = attributes[:'city']
+      end
+
+      if attributes.has_key?(:'state_province')
+        self.state_province = attributes[:'state_province']
+      end
+
+      if attributes.has_key?(:'postal_code')
+        self.postal_code = attributes[:'postal_code']
+      end
+
+      if attributes.has_key?(:'country')
+        self.country = attributes[:'country']
+      end
+
+      if attributes.has_key?(:'address_note')
+        self.address_note = attributes[:'address_note']
+      end
+
+      if attributes.has_key?(:'start_date')
+        self.start_date = attributes[:'start_date']
+      end
+
+      if attributes.has_key?(:'preferred')
+        self.preferred = attributes[:'preferred']
+      end
+
+      if attributes.has_key?(:'segment_type')
+        self.segment_type = attributes[:'segment_type']
+      end
+
+      if attributes.has_key?(:'address_type')
+        if (value = attributes[:'address_type']).is_a?(Array)
+          self.address_type = value
+        end
       end
     end
 
@@ -69,8 +167,20 @@ module AlmaClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          value == o.value
+          line1 == o.line1 &&
+          line2 == o.line2 &&
+          line3 == o.line3 &&
+          line4 == o.line4 &&
+          line5 == o.line5 &&
+          city == o.city &&
+          state_province == o.state_province &&
+          postal_code == o.postal_code &&
+          country == o.country &&
+          address_note == o.address_note &&
+          start_date == o.start_date &&
+          preferred == o.preferred &&
+          segment_type == o.segment_type &&
+          address_type == o.address_type
     end
 
     # @see the `==` method
@@ -82,7 +192,7 @@ module AlmaClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, value].hash
+      [line1, line2, line3, line4, line5, city, state_province, postal_code, country, address_note, start_date, preferred, segment_type, address_type].hash
     end
 
     # Builds the object from hash

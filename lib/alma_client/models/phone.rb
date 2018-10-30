@@ -13,24 +13,36 @@ Swagger Codegen version: 2.4.0-SNAPSHOT
 require 'date'
 
 module AlmaClient
-  class Parameter
-    attr_accessor :type
+  class Phone
+    attr_accessor :phone_number
 
-    attr_accessor :value
+    attr_accessor :preferred
+
+    attr_accessor :preferred_sms
+
+    attr_accessor :segment_type
+
+    attr_accessor :phone_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'value' => :'value'
+        :'phone_number' => :'phone_number',
+        :'preferred' => :'preferred',
+        :'preferred_sms' => :'preferred_sms',
+        :'segment_type' => :'segment_type',
+        :'phone_type' => :'phone_type'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'type' => :'ParameterTypeCode',
-        :'value' => :'ParameterValueCode'
+        :'phone_number' => :'String',
+        :'preferred' => :'BOOLEAN',
+        :'preferred_sms' => :'BOOLEAN',
+        :'segment_type' => :'String',
+        :'phone_type' => :'PhoneTypeCode'
       }
     end
 
@@ -42,12 +54,24 @@ module AlmaClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'phone_number')
+        self.phone_number = attributes[:'phone_number']
       end
 
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
+      if attributes.has_key?(:'preferred')
+        self.preferred = attributes[:'preferred']
+      end
+
+      if attributes.has_key?(:'preferred_sms')
+        self.preferred_sms = attributes[:'preferred_sms']
+      end
+
+      if attributes.has_key?(:'segment_type')
+        self.segment_type = attributes[:'segment_type']
+      end
+
+      if attributes.has_key?(:'phone_type')
+        self.phone_type = attributes[:'phone_type']
       end
     end
 
@@ -69,8 +93,11 @@ module AlmaClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          value == o.value
+          phone_number == o.phone_number &&
+          preferred == o.preferred &&
+          preferred_sms == o.preferred_sms &&
+          segment_type == o.segment_type &&
+          phone_type == o.phone_type
     end
 
     # @see the `==` method
@@ -82,7 +109,7 @@ module AlmaClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, value].hash
+      [phone_number, preferred, preferred_sms, segment_type, phone_type].hash
     end
 
     # Builds the object from hash

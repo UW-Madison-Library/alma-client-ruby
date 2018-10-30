@@ -13,24 +13,40 @@ Swagger Codegen version: 2.4.0-SNAPSHOT
 require 'date'
 
 module AlmaClient
-  class Parameter
-    attr_accessor :type
+  class UserNote
+    attr_accessor :note_type
 
-    attr_accessor :value
+    attr_accessor :note_text
+
+    attr_accessor :user_viewable
+
+    attr_accessor :created_by
+
+    attr_accessor :created_date
+
+    attr_accessor :segment_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'value' => :'value'
+        :'note_type' => :'note_type',
+        :'note_text' => :'note_text',
+        :'user_viewable' => :'user_viewable',
+        :'created_by' => :'created_by',
+        :'created_date' => :'created_date',
+        :'segment_type' => :'segment_type'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'type' => :'ParameterTypeCode',
-        :'value' => :'ParameterValueCode'
+        :'note_type' => :'UserNoteCode',
+        :'note_text' => :'String',
+        :'user_viewable' => :'BOOLEAN',
+        :'created_by' => :'String',
+        :'created_date' => :'String',
+        :'segment_type' => :'String'
       }
     end
 
@@ -42,12 +58,28 @@ module AlmaClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'note_type')
+        self.note_type = attributes[:'note_type']
       end
 
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
+      if attributes.has_key?(:'note_text')
+        self.note_text = attributes[:'note_text']
+      end
+
+      if attributes.has_key?(:'user_viewable')
+        self.user_viewable = attributes[:'user_viewable']
+      end
+
+      if attributes.has_key?(:'created_by')
+        self.created_by = attributes[:'created_by']
+      end
+
+      if attributes.has_key?(:'created_date')
+        self.created_date = attributes[:'created_date']
+      end
+
+      if attributes.has_key?(:'segment_type')
+        self.segment_type = attributes[:'segment_type']
       end
     end
 
@@ -69,8 +101,12 @@ module AlmaClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          value == o.value
+          note_type == o.note_type &&
+          note_text == o.note_text &&
+          user_viewable == o.user_viewable &&
+          created_by == o.created_by &&
+          created_date == o.created_date &&
+          segment_type == o.segment_type
     end
 
     # @see the `==` method
@@ -82,7 +118,7 @@ module AlmaClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, value].hash
+      [note_type, note_text, user_viewable, created_by, created_date, segment_type].hash
     end
 
     # Builds the object from hash
